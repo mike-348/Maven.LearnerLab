@@ -15,4 +15,15 @@ public class TestZipCodeWilmington {
 
         Assert.assertEquals(50, (double) mike.getTotalStudyTime(), 001);
     }
+
+    @Test
+    public void testHostLecture1() {
+        Instructor dolio = Educator.DOLIO.instructor;
+        Student mike = new Student(002, "mike");
+        Student kyle = new Student(003, "kyle");
+
+        ZipCodeWilmington.getInstance().hostLecture(001, 100);
+
+        Assert.assertEquals(50, (double) mike.getTotalStudyTime(), 001);
+    }
 }

@@ -12,4 +12,14 @@ public class TestStudents {
 
         Assert.assertTrue(Students.getInstance().personList.contains(lilJon));
     }
+
+    @Test
+    public void testStudents1() {
+        Student lilKim = new Student(002, "lil kim");
+
+        Assert.assertEquals(Students.getInstance().personList.get(0), lilKim);
+        Assert.assertTrue(lilKim instanceof Person);
+        Assert.assertTrue(lilKim instanceof Learner);
+        Assert.assertTrue(lilKim instanceof Student);
+    }
 }

@@ -27,6 +27,19 @@ public class EducatorTest {
 
     @Test
     public void testLecture() {
-        Educator.KRIS.lecture();
+        Student mike = new Student(001, "mike");
+        Student kyle = new Student(002, "kyle");
+        Student myah = new Student(003, "myah");
+        Student ryan = new Student(004, "ryan");
+        Student dejen = new Student(005, "dejen");
+        Learner[] learners = {mike, kyle, myah, ryan, dejen};
+
+        Educator.DOLIO.lecture(learners, 25);
+
+        Assert.assertEquals(5, (double) mike.getTotalStudyTime(), 001);
+        Assert.assertEquals(5, (double) kyle.getTotalStudyTime(), 001);
+        Assert.assertEquals(5, (double) myah.getTotalStudyTime(), 001);
+        Assert.assertEquals(5, (double) ryan.getTotalStudyTime(), 001);
+        Assert.assertEquals(5, (double) dejen.getTotalStudyTime(), 001);
     }
 }
