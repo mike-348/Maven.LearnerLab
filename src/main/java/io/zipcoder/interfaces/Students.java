@@ -11,4 +11,8 @@ public final class Students extends People<Student>{
     }
 
 
+    @Override
+    public Student[] getArray() {
+        return personList.toArray(new Student[personList.size()]);
+    }
 }

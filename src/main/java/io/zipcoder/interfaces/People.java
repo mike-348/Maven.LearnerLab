@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class People<E extends Person> implements Iterable<E>{
+public abstract class People<E extends Person> implements Iterable<E>{
 
     List<E> personList = new ArrayList<>();
 
@@ -44,10 +44,7 @@ public class People<E extends Person> implements Iterable<E>{
         return personList.size();
     }
 
-    public Person[] toArray(List<E> personList) {
-        return personList.toArray(new Person[0]);
-
-    }
+    public abstract E[] getArray();
 
     @Override
     public Iterator<E> iterator() {

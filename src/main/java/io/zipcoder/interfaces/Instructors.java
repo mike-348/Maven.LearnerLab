@@ -8,4 +8,8 @@ public class Instructors extends People<Instructor>{
         return INSTANCE;
     }
 
+    @Override
+    public Instructor[] getArray() {
+        return personList.toArray(new Instructor[personList.size()]);
+    }
 }
