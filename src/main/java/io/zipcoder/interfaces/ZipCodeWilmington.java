@@ -16,11 +16,21 @@ public class ZipCodeWilmington{
     }
 
     public void hostLecture(Teacher teacher, double numberOfHours) {
-        teacher.lecture(students.personList.toArray(new Student[0]), numberOfHours);
+//        teacher.lecture(students.personList.toArray(new Student[0]), numberOfHours);
+        Student[] studentArray = new Student[students.personList.size()];
+        for (int i = 0; i < students.personList.size(); i++) {
+            studentArray[i] = students.personList.get(i);
+        }
+        teacher.lecture(studentArray, numberOfHours);
     }
 
     public void hostLecture(long id, double numberOfHours) {
-        instructors.findById(id).lecture(students.personList.toArray(new Student[0]), numberOfHours);
+//        instructors.findById(id).lecture(students.personList.toArray(new Student[0]), numberOfHours);
+        Student[] studentArray = new Student[students.personList.size()];
+        for (int i = 0; i < students.personList.size(); i++) {
+            studentArray[i] = students.personList.get(i);
+        }
+        instructors.findById(id).lecture(studentArray, numberOfHours);
     }
 
     public Map<Student, Double> getStudyMap() {
